@@ -58,7 +58,7 @@ class _inputpageState extends State<inputpage> {
                     ),),
                     SizedBox(height: 15),
                     Text(
-                      _result==null? "Enter Value" : "BMI : $_result",
+                      _result==null? "Enter Value" : "BMI : ${_result?.toStringAsFixed(2)}",
                       style: TextStyle(
                         color: Colors.redAccent,
                         fontSize: 19.4,
