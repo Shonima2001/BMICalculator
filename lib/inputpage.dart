@@ -11,6 +11,14 @@ class _inputpageState extends State<inputpage> {
   final TextEditingController _weightController = TextEditingController();
 
   double? _result;
+  void calculate(){
+    double height = double.parse(_heightController.text) /100;
+    double weight = double.parse(_weightController.text);
+    double heightsqure = height*height;
+    double result=weight/heightsqure;
+    _result=result;
+    setState(() {});
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,13 +52,13 @@ class _inputpageState extends State<inputpage> {
                       ),
                     ),
                     SizedBox(height: 15),
-                    ElevatedButton(onPressed: (){}, child: Text(
+                    ElevatedButton(onPressed: (){calculate();}, child: Text(
                       "calculate",
                       style: TextStyle(color: Colors.white),
                     ),),
                     SizedBox(height: 15),
                     Text(
-                      "_result",
+                      _result==null? "Enter Value" : "BMI : $_result",
                       style: TextStyle(
                         color: Colors.redAccent,
                         fontSize: 19.4,
@@ -66,13 +74,6 @@ class _inputpageState extends State<inputpage> {
       ),
     );
   }
-  void calculate(){
-    double height = double.parse(_heightController.text) /100;
-    double weight = double.parse(_weightController.text);
-    double heightsqure = height*height;
-    double result=weight/heightsqure;
-    _result=result;
-    setState(() {});
-  }
+
 }
 
