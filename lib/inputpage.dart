@@ -47,7 +47,7 @@ class _inputpageState extends State<inputpage> {
                     ElevatedButton(onPressed: (){}, child: Text(
                       "calculate",
                       style: TextStyle(color: Colors.white),
-                    ),),
+                    ),), 
 
 
 
