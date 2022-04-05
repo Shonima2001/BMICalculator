@@ -47,10 +47,7 @@ class _inputpageState extends State<inputpage> {
                     ElevatedButton(onPressed: (){}, child: Text(
                       "calculate",
                       style: TextStyle(color: Colors.white),
-                    ),), 
-
-
-
+                    ),),
                     SizedBox(height: 15),
                     Text(
                       "_result",
@@ -69,4 +66,13 @@ class _inputpageState extends State<inputpage> {
       ),
     );
   }
+  void calculate(){
+    double height = double.parse(_heightController.text) /100;
+    double weight = double.parse(_weightController.text);
+    double heightsqure = height*height;
+    double result=weight/heightsqure;
+    _result=result;
+    setState(() {});
+  }
 }
+
